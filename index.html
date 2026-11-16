@@ -51,22 +51,12 @@
     .card-kandidat:hover:not(.disabled) { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(59, 130, 246, 0.3); }
     .card-kandidat.selected { border-color: #ef4444; background-color: #fef2f2; }
 
-    /* Gaya untuk Kandidat yang Dinonaktifkan (Nomor 1) */
+    /* Gaya untuk Kandidat 1: Tampilan tetap seperti biasa, tapi tidak bisa diklik */
     .card-kandidat.disabled {
-      filter: grayscale(100%);
-      opacity: 0.65;
-      background: #e2e3e5;
-      border-color: #9ca3af;
       cursor: not-allowed;
+      opacity: 0.85;
     }
     .card-kandidat.disabled:hover { transform: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-    .card-kandidat.disabled .nomor-urut { background: #6c757d; border-color: #4b5563; }
-    .badge-nonaktif {
-      position: absolute; top: 40%; left: 50%; transform: translateX(-50%) rotate(-10deg);
-      background: #dc3545; color: white; padding: 6px 12px; font-weight: bold;
-      border-radius: 4px; font-size: 0.8rem; letter-spacing: 1px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3); z-index: 10;
-    }
     
     .nomor-urut {
       font-size: 0.9rem; font-weight: bold; color: #1e3a8a; background-color: #dbeafe;
@@ -188,9 +178,8 @@
     </header>
 
     <main class="surat-suara-container">
-      <!-- Kandidat 1 (DINONAKTIFKAN) -->
+      <!-- Kandidat 1 (Tampilan normal tanpa badge, tapi terkunci/tidak bisa diklik) -->
       <div class="card-kandidat disabled" id="card-1">
-        <div class="badge-nonaktif">TIDAK AKTIF</div>
         <div class="nomor-urut">NO. 01</div>
         <div class="frame-foto"><img src="calon_1.jpg" alt="Calon 01" onerror="this.src='https://via.placeholder.com/150/ef4444/ffffff?text=Calon+01'"></div>
         <div class="nama-calon">xxxxxxxxxx</div>
